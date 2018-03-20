@@ -1,28 +1,73 @@
 .App {
-  text-align: center;
-}
+  padding: 2rem; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+  height: 80px; }
 
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
-}
+  color: white; }
 
 .App-title {
-  font-size: 1.5em;
-}
+  font-size: 1.5em; }
 
 .App-intro {
-  font-size: large;
-}
+  font-size: large; }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+/* Custom */
+.fudget.list-group .list-group-item {
+  display: flex;
+  align-items: center; }
+  .fudget.list-group .list-group-item .info {
+    flex: 1;
+    margin-right: auto; }
+
+.fudget .input-group.submit-right {
+  display: flex;
+  justify-content: flex-end; }
+
+.input-group-text.expected_out {
+  background-color: #f7c7dc; }
+
+.input-group-text.actual_out {
+  background-color: #ff5b93; }
+
+.input-group-text.expected_in {
+  background-color: #c7f7e2; }
+
+.input-group-text.actual_in {
+  background-color: #5bffc7; }
+
+.transactionList {
+  min-width: 750px; }
+  .transactionList > li {
+    display: flex; }
+    .transactionList > li > * {
+      flex: 3; }
+    .transactionList > li > div:first-child {
+      flex: 1;
+      padding-right: 1rem;
+      border-right: 1px solid #999;
+      margin-right: 1rem; }
+    .transactionList > li > div:nth-child(n + 2) {
+      text-align: center; }
+  .transactionList .listItemAction {
+    flex: 0; }
+  .transactionList .btn-text {
+    display: none; }
+  @media screen and (min-width: 800px) {
+    .transactionList .listItemAction {
+      flex: 1; }
+    .transactionList .btn-text {
+      display: block; }
+    .transactionList .btn-icon {
+      display: none; } }
