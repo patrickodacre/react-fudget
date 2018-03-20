@@ -1,44 +1,11 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import Accounts from './Accounts'
-
-const routes = [
-    {
-        path: '/',
-        exact: true,
-        heading: () => <h2>Home</h2>,
-        content: () => <div>home!</div>
-    },
-    {
-        path: '/users',
-        heading: () => <h2>User List</h2>,
-        content: () => <div>Users!</div>
-    },
-    {
-        path: '/posts',
-        heading: () => <h2>Post List</h2>,
-        content: () => <div>Posts!</div>
-    },
-    {
-        path: '/accounts',
-        heading: () => <h2>Account List</h2>,
-        content: Accounts
-    }
-]
+import Account from './Account'
+import Transactions from './Transactions'
 
 export default () => (
-    <div style={{ padding: '4rem' }}>
-        <header>
-            <div>Header</div>
-            {routes.map((route, index) => (
-                <Route
-                    key={index}
-                    path={route.path}
-                    component={route.heading}
-                    exact={route.exact}
-                />
-            ))}
-        </header>
+    <div id="main-content" className="mb-5">
         <div id="content">
             {routes.map((route, index) => (
                 <Route
@@ -51,3 +18,34 @@ export default () => (
         </div>
     </div>
 )
+
+const routes = [
+    {
+        path: '/',
+        exact: true,
+        content: () => <h2>Home</h2>
+    },
+    {
+        path: '/users',
+        content: () => <h2>User List</h2>
+    },
+    {
+        path: '/posts',
+        content: () => <h2>Post List</h2>
+    },
+    {
+        path: '/accounts',
+        content: Accounts,
+        exact: true
+    },
+    {
+        path: '/accounts/:id',
+        content: Account,
+        exact: true
+    },
+    {
+        path: '/groups/:id',
+        content: Transactions,
+        exact: true
+    }
+]
