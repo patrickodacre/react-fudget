@@ -7,7 +7,7 @@ import moment from 'moment'
 export default props => {
     function handleClick(evt) {
         // call the fn passed into props as onDeleteClicked
-        props.onDeleteClicked(parseInt(evt.target.attributes.acc.value))
+        props.onDeleteClicked(parseInt(evt.target.attributes.acc.value, 10))
     }
     return (
         <ul className="list-group fudget">
