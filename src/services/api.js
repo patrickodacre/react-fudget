@@ -6,7 +6,7 @@ export default () => {
     return {
         get,
         post,
-        put,
+        patch,
         del
     }
 
@@ -25,7 +25,13 @@ export default () => {
             }
         })
     }
-    function put() {}
+    function patch(url, payload) {
+        return axios.patch(urlBase + url, payload).then(res => {
+            if (res.status === 200) {
+                return res.data.data
+            }
+        })
+    }
     function del(url) {
         return axios.delete(urlBase + url).then(res => {
             if (res.status === 200) {
